@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+# remove default crontab
+echo '' | crontab -
+
+echo --- Starting cron daemon ---
+echo - TZ: $TZ
+echo - crontabs:
+crontab -l
+cat /var/spool/cron/crontabs/*
+echo ----------------------------
+
+# set timezone
+rm -f /etc/localtime
+ln -s /usr/share/zoneinfo/$TZ /etc/localtime
+echo $TZ > /etc/timezone
+
+# start crond
+crond -s /var/spool/cron/crontabs -f -l 6 -M /logger "$@"

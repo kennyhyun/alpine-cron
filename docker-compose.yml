@@ -1,0 +1,14 @@
+version: "3.6"
+services:
+
+  crontab:
+    image: kennyhyun/aline-cron
+    build:
+      context: ./build
+    volumes:
+      - ./cron/crontabs:/etc/cron.d
+      - ./cron/scripts:/scripts
+    environment:
+      - TZ=${TZ:-Australia/Sydney}
+    networks:
+      - default

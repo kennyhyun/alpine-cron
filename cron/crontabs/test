@@ -1,0 +1,3 @@
+* * * * * /scripts/test
+* * * * * echo "haha"
+# Mandatory blank line, don't use . in the script name
