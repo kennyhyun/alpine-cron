@@ -20,3 +20,14 @@ Using dcron(dillon's cron daemon) instead of busybox's
 ```
 $ docker-compose up
 ```
+
+![Screenshot](https://raw.githubusercontent.com/kennyhyun/alpine-cron/master/alpine.cron.png)
+
+## Tips
+
+Set your timezone using TZ
+
+`.env`
+```
+TZ=Australia/Sydney
+```
