@@ -1,7 +1,7 @@
 version: "3.6"
 services:
 
-  crontab:
+  cron:
     image: kennyhyun/alpine-cron
     build:
       context: ./build
